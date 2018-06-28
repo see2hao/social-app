@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/see2hao/social-app/issues"
   },
-  "homepage": "https://github.com/see2hao/social-app#readme"
+  "homepage": "https://github.com/see2hao/social-app#readme",
+  "devDependencies": {
+    "webpack": "^4.12.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
 }
