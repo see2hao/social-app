@@ -6,9 +6,14 @@ const session = require('express-session');
 const cors = require('cors');
 const password = require('passport');
 const errorhandler = require('errorhandler');
+const connection = require('./database/connections');
 // const routes = require('./routes');
 const mysql =  require('mysql');
 const PORT = 8080;
+
+connection.connect();
+
+// connection.
 
 const app = express();
 
@@ -58,22 +63,6 @@ app.use((err, req, res, next)=>{
     }});
 })
 // app.use(routes);
-
-//连接数据库
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    insecureAuth: true,
-});
-
-connection.connect(err=>{
-    if(err){
-        console.log(err);
-    }else{
-        console.log(`Connected mysql successly.`);
-    }
-});
 
 // app.get('/test', (req, res)=>{
 //     console.log(req.body);
